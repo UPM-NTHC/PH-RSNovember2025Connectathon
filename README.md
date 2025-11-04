@@ -1,6 +1,6 @@
  # Philippine Road Safety FHIR® Connectathon – November 2025, Quezon City, Philippines
 
-![Placeholder PH RS Connectathon Graphic](<graphics\PH Road Safety Connectathon Graphic.png>)
+![Placeholder PH RS Connectathon Graphic](<graphics/PH Road Safety Connectathon Graphic.png>)
 
 The PH Road Safety Connectathon (17-21 November 2025, Metro Manila) is the final milestone of the SIL-PH project with the Department of Health. This Connectathon is co-organised by DOH and UP NTHC.
 
@@ -38,7 +38,7 @@ The general objective of this activity is to strengthen capacity for digital hea
 
   
 ## Use Case Summary (Tracks)
-![Use Cases Graphic](<graphics\Use Cases.png>)
+![Use Cases Graphic](<graphics/Use Cases.png>)
 
 | **USE CASE**| **STATION** | **END USER** |
 |-----------------|-----------------|----------|
@@ -66,3 +66,4 @@ FHIR R4 | FHIRLab |https://cdr.fhirlab.net/fhir
 Note: FHIR® is a registered trademark of Health Level Seven International.  
 
 For questions and queries regarding the connectathon, please contact amongkeko@up.edu.ph.
+
