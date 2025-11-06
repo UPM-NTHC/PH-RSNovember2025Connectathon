@@ -12,7 +12,7 @@ The general objective of this activity is to strengthen capacity for digital hea
 
 ## Important Information
 
-- [PH Road Safety Connectathon Program (November 17-21, 2025)](insertlinkhere)
+- [PH Road Safety Connectathon Program (November 17-21, 2025)](https://docs.google.com/document/d/17hV5Y1cuO2oAOhNZXDmwagq6KVonraf5uqqKZ0h4brU/)
 - [PH Road Safety Connectathon Logistic Note](insertlinkhere)
 - [Draft PH Road Safety FHIR Implementation Guide (IG)](https://build.fhir.org/ig/UPM-NTHC/PH-RoadSafetyIG/)
 - [PH Core FHIR Implementation Guide (IG)](https://build.fhir.org/ig/UP-Manila-SILab/ph-core/index.html) 
@@ -42,11 +42,12 @@ The general objective of this activity is to strengthen capacity for digital hea
 
 | **USE CASE**| **STATION** | **END USER** |
 |-----------------|-----------------|----------|
-| UC1: Submit Run Report Form to National Health Data Repository (NHDR)/Shared Health Record (SHR) **(POST)** | Transport | EMS |
-| UC2: Retrieve data from NHDR/SHR **(GET)** | Facility | Hospital |
-| UC3&4: Update & submit data to ONEISS & NHDR/SHR **(PUT & POST)** | Facility | Hospital
-| UC5: Retrieve relevant data from NHDR/SHR for agency reports **(GET)** | Post-crash investigation | DPWH/DOTr
-| UC6: Retrieve data from NHDR/SHR at patient follow-up **(GET)**| Post-crash investigation | Health centers
+| UC1: Users will submit *Run Report Form* bundle to National Health Data Repository (NHDR)/Shared Health Record (SHR). **(POST)** | Transport | EMS |
+| UC2: Users will retrieve data bundle from NHDR/SHR. **(GET)** | Facility | Hospital |
+| UC3: Users will submit *ONEISS bundle* to NHDR/SHR. **(POST)** | Facility | Hospital |
+| UC4: Submit *ONEISS bundle* to ONEISS Sandbox. **(POST)** | Facility | Hospital |
+| UC5: Users will retrieve relevant data from NHDR/SHR for agency reports. **(GET)** | Post-crash investigation | Government agency
+| UC6: Users will retrieve data from NHDR/SHR for continuity of care. **(GET)**| Post-crash investigation | Health center
 
 ## Tracks and Sample Data
 
