@@ -1,11 +1,11 @@
  # Philippine Road Safety FHIR® Connectathon – November 2025, Quezon City, Philippines
 
-![Placeholder PH RS Connectathon Graphic](<graphics/PH Road Safety Connectathon Graphic.png>)
+![PH RS Connectathon Graphic](<graphics/ph-road-safety-connectathon-graphic.png>)
 
-The PH Road Safety Connectathon (17-21 November 2025, Metro Manila) is the final milestone of the SIL-PH project with the Department of Health. This Connectathon is co-organised by DOH and UP NTHC.
+The PH Road Safety Connectathon (17-21 November 2025, Metro Manila) is the final milestone of the SIL-PH project with the Department of Health. This Connectathon is co-organized by DOH and UP NTHC.P
 
 Around 60 participants from government, hospitals, EMS, EMR vendors, and partners will test the first Road Safety Minimum Data Set (MDS) and draft FHIR Implementation Guide through scenario-based simulations. 
-
+ 
 Output is envisioned to strengthen Universal Health Care and the Philippine Road Safety Action Plan 2023–2028, advancing the DOH 8-Point Action Agenda.
 
 The general objective of this activity is to strengthen capacity for digital health interoperability by combining structured training and a multi-day Connectathon focused on road safety workflows as a proof-of-concept use case.
@@ -13,9 +13,9 @@ The general objective of this activity is to strengthen capacity for digital hea
 ## Important Information
 
 - [PH Road Safety Connectathon Program (November 17-21, 2025)](https://docs.google.com/document/d/17hV5Y1cuO2oAOhNZXDmwagq6KVonraf5uqqKZ0h4brU/)
-- [PH Road Safety Connectathon Logistic Note](insertlinkhere)
+- [PH Road Safety Connectathon Logistic Note](https://docs.google.com/document/d/1lOSJ5Jv6hQK56KHZS7bSjEpVGTeYu5JI3vCzxdb-bdc/)
 - [Draft PH Road Safety FHIR Implementation Guide (IG)](https://build.fhir.org/ig/UPM-NTHC/PH-RoadSafetyIG/)
-- [PH Core FHIR Implementation Guide (IG)](https://build.fhir.org/ig/UP-Manila-SILab/ph-core/index.html) 
+- [Draft PH Core FHIR Implementation Guide (IG)](https://build.fhir.org/ig/UP-Manila-SILab/ph-core/index.html) 
 
 ## Specific Objectives 
 
@@ -38,24 +38,32 @@ The general objective of this activity is to strengthen capacity for digital hea
 
   
 ## Use Case Summary (Tracks)
-![Use Cases Graphic](<graphics/Use Cases.png>)
+![Use Cases Graphic](<graphics/use-cases-graphic.png>)
 
 | **USE CASE**| **STATION** | **END USER** |
 |-----------------|-----------------|----------|
-| UC1: Users will submit *Run Report Form* bundle to National Health Data Repository (NHDR)/Shared Health Record (SHR). **(POST)** | Transport | EMS |
-| UC2: Users will retrieve data bundle from NHDR/SHR. **(GET)** | Facility | Hospital |
-| UC3: Users will submit *ONEISS bundle* to NHDR/SHR. **(POST)** | Facility | Hospital |
-| UC4: Submit *ONEISS bundle* to ONEISS Sandbox. **(POST)** | Facility | Hospital |
-| UC5: Users will retrieve relevant data from NHDR/SHR for agency reports. **(GET)** | Post-crash investigation | Government agency
-| UC6: Users will retrieve data from NHDR/SHR for continuity of care. **(GET)**| Post-crash investigation | Health center
+| UC1: Users will submit *RS Case* bundle to Shared Health Record (SHR). **(POST)**  | Transport | EMS |
+| 👉 [Click for track details of Use Case #1](use-case-1.md) | |
+| UC2: Users will retrieve data bundle from SHR. **(GET)** | Facility | Hospital |
+| 👉 [Click for track details of Use Case #2](use-case-2.md) | |
+| UC3: Users will submit *RS Case* bundle to SHR. **(POST)** | Facility | Hospital |
+| 👉 [Click for track details of Use Case #3](use-case-3.md) | |
+| UC4: Submit *RS Case* bundle to ONEISS Sandbox. **(POST)** | Facility | Hospital |
+| 👉 [Click for track details of Use Case #4](use-case-4.md) | |
+| UC5: Users will retrieve relevant data from SHR for agency reports. **(GET)** | Post-incident investigation | Government agency
+| 👉 [Click for track details of Use Case #5](use-case-5.md) | |
+| UC6: Users will retrieve data from SHR for continuity of care. **(GET)** | Post-incident investigation | Health center
+| 👉 [Click for track details of Use Case #6](use-case-6.md) | |
 
-## Tracks and Sample Data
+## Postman Collection and Environment
 
-- [Use Case #1](use-case-1.md)
-- [Use Case #2](use-case-2.md)
-- [Use Case #3 and #4](use-case-3-4.md)
-- [Use Case #5 and #6](use-case-5-6.md)
-- [Postman Collection and Environment](postman-collection)
+To help participants get started, we have prepared Postman collections, environment, and example data for each Use Case. These include:
+
+- Expanding valuesets
+- Validating resources
+- Submitting transaction bundles
+
+👉 [Click for the link to the Postman Collection and Environment](postman-collection)
 
 ## FHIR Server available for testing during the Connectathon
 
@@ -63,8 +71,27 @@ The general objective of this activity is to strengthen capacity for digital hea
 |-------------|---------|-------------|
 FHIR R4 | FHIRLab |https://cdr.fhirlab.net/fhir 
 
+## Supplementary information
+### International semantic and sytactic standards
+- [OpenHIE Architecture](https://ohie.org/architecture-specification/)
+- [HL7 FHIR](https://www.fhir.org/)
+    - How to submit basic FHIR resources
+    - How to submit FHIR resources with Profiles from a FHIR Implementation Guide
+    - How to retrieve and $expand ValueSets
+    > Note: FHIR R4 will be used in alignment with national digital health initiatives.
+- [SNOMED CT](https://www.snomed.org/what-is-snomed-ct)
+- [ICD-10](https://icd.who.int/browse10/2019/en)
+- [LOINC](https://loinc.org/)
 
-Note: FHIR® is a registered trademark of Health Level Seven International.  
+### FHIRLab (https://fhirlab.net) 
+- [FHIR Server - `Hapi FHIR`](https://cdr.fhirlab.net/fhir)
+- [Terminology Server - `Ontoserver w/ Shrimp as viewer`](https://ontoserver.csiro.au/shrimp/)
 
-For questions and queries regarding the connectathon, please contact amongkeko@up.edu.ph.
+> Note: FHIR® Lab is part of The Strengthening Standards Capability Project (SSCP), co-funded by CSIRO Australia and Australian Government, Department of Foreign Affairs and Trade. 
+
+---
+
+FHIR® is a registered trademark of Health Level Seven International. 
+
+For questions and queries regarding the connectathon, please contact nih-nthc.upmanila@up.edu.ph.
 
