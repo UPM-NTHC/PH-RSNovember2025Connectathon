@@ -44,7 +44,6 @@ Hospital Facility->>FHIR Server : POST Patient Data Bundle <br> (Use ONLY mock d
 activate FHIR Server
 FHIR Server-->>Hospital Facility: 200 OK + 201 Created <br> (Resource IDs generated)
 deactivate FHIR Server
-end
 ```
 
 ### Acceptance Criteria
