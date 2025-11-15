@@ -1,17 +1,18 @@
-# Use Case #3 and #4
+# Use Case #3
 
-Use Case #3 and #4 will focus on 
+Use Case #3
 
 The PH Road Safety FHIR® Connectathon 2025 will use the **draft** [PH RS FHIR Implementation Guide](https://build.fhir.org/ig/UPM-NTHC/PH-RoadSafetyIG/) with references pointing to the **draft** [PH Core FHIR Implementation Guide](https://build.fhir.org/ig/UP-Manila-SILab/ph-core/index.html).
 
 > [!CAUTION]
 > **The PH Road Safety FHIR IG and PH Core FHIR IG are made available for this track in initial draft forms with limited resources - The IGs are not suitable for production use or advanced testing.**
 
-## FHIR Server available for testing
+## Servers available for testing
 
- Version | Server | Endpoint
-|-------------|---------|-------------|
-FHIR R4 | FHIRLab |https://cdr.fhirlab.net/fhir 
+Server |  Version | Name | Endpoint
+|-------|-------|------|---------|
+HAPI FHIR Server|FHIR R4 | FHIRLab | https://cdr.fhirlab.net/fhir 
+Terminology Server|FHIR R4 | Ontoserver | https://tx.fhirlab.net/fhir 
 
 Note: FHIRLab is an open interoperability sandbox. FHIR server in FHIRLab will remain accessible for testing and on-going learning activities post connectathon.
 
@@ -22,25 +23,34 @@ The tools below allow you to perform experimentation immediately and interact wi
 - [Postman Collection](../postman-collection/) 
 - [FHIR validator](https://validator.fhirlab.net)
 
-## Activity 1: Utilize the Terminology Server and Retrieve Value Set Codes
-
+## Activity 3: Validate and submit a Hospital Facility FHIR Bundle to the Shared Health Record (Use Case #3).
 | Step | Activity                                       | Notes                                                                 | 
 |------|------------------------------------------------|-----------------------------------------------------------------------|
-| 1    | Review Immunization FHIR IG Resources               | Refer to Resource Profiles found on the [Immunization FHIR IG Artifacts](https://build.fhir.org/ig/UP-Manila-SILab/immunizationfhirig/artifacts.html). |
-| 2    | Setup access to test FHIR server                    | Refer to the environment under the [Postman Collection](../postman-collection) folder.  |
-| 3    | Create a Resource `Bundle` for an individual patient| A bundle is a container for a collection of resources. Use provided examples.|
-| 4    | `$validate` the Resource Bundle                     |                                                                       |
-| 5    | Submit `Bundle` to FHIR Server                      |                                                                       |
+| 1    | Review Road Safety FHIR IG Resources           | Refer to Resource Profiles found on the [Road Safety FHIR IG Artifacts](https://github.com/UP-Manila-SILab/PH-RoadSafetyIG).|
+| 2    | Setup access to test FHIR server               | Refer to the provided environment under the [Postman Collection](../postman-collection) folder. |
+| 3    | Create a Resource `Bundle` for an individual patient| A bundle is a container for a collection of resources. Use provided examples. |
+| 4    | `$validate` the Resource Bundle                | Resources can be validated through Postman (tx endpoint) or through hosted FHIR validators. | 
+| 5    | Submit `Bundle` to the SHR                    | Use the FHIRLab `HAPI FHIR` Endpoint https://cdr.fhirlab.net/fhir |
 
 
 ### Use Case Success
-Server returns HTTP 200 OK with full Value Set response.
+- Server returns HTTP `200 OK`. 
+- Transaction response also shows that resources were `201 Created` (with generated resource IDs). 
 
 ### Sequence Diagram
-![alt text](<FHIR PH Immunization Sequence Diagram - UC1,5.png>)
+```mermaid
+sequenceDiagram
+Hospital Facility->>FHIR Server : POST Patient Data Bundle <br> (Use ONLY mock data)
+activate FHIR Server
+FHIR Server-->>Hospital Facility: 200 OK + 201 Created <br> (Resource IDs generated)
+deactivate FHIR Server
+end
+```
 
 ### Acceptance Criteria
-For a more detailed overview of the acceptance criteria of Use Cases (Tracks) #1 and #5, please refer to the [Acceptance Criteria Google Sheet UC#1,5](https://docs.google.com/spreadsheets/d/1OF5Jh_beGjB9nB7WSfQ_H10fC_Z-4T_4dBGndu6mgoQ/edit?gid=507922979#gid=507922979)
+For a more detailed overview of the acceptance criteria of Use Case #3, please refer to the PH RS Acceptance Criteria Google Sheet.
+
+👉 [Click for details on the Acceptance Criteria of Use Case #3](https://docs.google.com/spreadsheets/d/1YOYHxm9gU2V4fiAoLIVBWDrbZdsakTPHWAWg--DKrsA/)
 
 ## Assumptions
 

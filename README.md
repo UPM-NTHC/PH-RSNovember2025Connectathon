@@ -2,7 +2,7 @@
 
 ![PH RS Connectathon Graphic](<graphics/ph-road-safety-connectathon-graphic.png>)
 
-The PH Road Safety Connectathon (17-21 November 2025, Metro Manila) is the final milestone of the SIL-PH project with the Department of Health. This Connectathon is co-organized by DOH and UP NTHC.P
+The PH Road Safety Connectathon (17-21 November 2025, Metro Manila) is the final milestone of the SIL-PH project with the Department of Health. This Connectathon is co-organized by DOH and UP NTHC.
 
 Around 60 participants from government, hospitals, EMS, EMR vendors, and partners will test the first Road Safety Minimum Data Set (MDS) and draft FHIR Implementation Guide through scenario-based simulations. 
  
@@ -48,16 +48,14 @@ The general objective of this activity is to strengthen capacity for digital hea
 | 👉 [Click for track details of Use Case #2](use-case-2.md) | |
 | UC3: Users will submit *RS Case* bundle to SHR. **(POST)** | Facility | Hospital |
 | 👉 [Click for track details of Use Case #3](use-case-3.md) | |
-| UC4: Submit *RS Case* bundle to ONEISS Sandbox. **(POST)** | Facility | Hospital |
+| UC4: Users will retrieve relevant data from SHR for agency reports. **(GET)** | Post-incident investigation | Government agency
 | 👉 [Click for track details of Use Case #4](use-case-4.md) | |
-| UC5: Users will retrieve relevant data from SHR for agency reports. **(GET)** | Post-incident investigation | Government agency
+| UC5: Users will retrieve data from SHR for continuity of care. **(GET)** | Post-incident investigation | Health center
 | 👉 [Click for track details of Use Case #5](use-case-5.md) | |
-| UC6: Users will retrieve data from SHR for continuity of care. **(GET)** | Post-incident investigation | Health center
-| 👉 [Click for track details of Use Case #6](use-case-6.md) | |
 
 ## Postman Collection and Environment
 
-To help participants get started, we have prepared Postman collections, environment, and example data for each Use Case. These include:
+To help participants get started, we have prepared Postman collections, environment, and example data for each use case. These include:
 
 - Expanding valuesets
 - Validating resources
@@ -84,7 +82,8 @@ FHIR R4 | FHIRLab |https://cdr.fhirlab.net/fhir
 - [LOINC](https://loinc.org/)
 
 ### FHIRLab (https://fhirlab.net) 
-- [FHIR Server - `Hapi FHIR`](https://cdr.fhirlab.net/fhir)
+- [FHIR Server - `Hapi FHIR Endpoint`](https://cdr.fhirlab.net/fhir)
+- [Terminology Server - `Ontoserver Endpoint`](https://tx.fhirlab.net/fhir)
 - [Terminology Server - `Ontoserver w/ Shrimp as viewer`](https://ontoserver.csiro.au/shrimp/)
 
 > Note: FHIR® Lab is part of The Strengthening Standards Capability Project (SSCP), co-funded by CSIRO Australia and Australian Government, Department of Foreign Affairs and Trade. 
