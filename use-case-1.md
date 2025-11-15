@@ -1,6 +1,6 @@
 # Use Case #1
 
-A road safety incident happens and someone on the road needs medical attention. Emergency medical services were called to the scene to assess the patient and bring him to the facility. A patient care form was filled up and must be submitted to the electronic shared health records. Use Case #1 shall be the act of Submitting the RS Case bundle to the SHR endpoint.
+A road safety incident happens and someone on the road needs medical attention. Emergency medical services were called to the scene to assess the patient and bring him to the facility. A patient care form was filled up and must be submitted to the electronic shared health records. Use Case #1 shall be the act of submitting the road safety case bundle from the EMS to the SHR endpoint.
 
 The PH Road Safety FHIR® Connectathon 2025 will use the **draft** [PH Road Safety FHIR Implementation Guide](https://build.fhir.org/ig/UPM-NTHC/PH-RoadSafetyIG/) with references pointing to the **draft** [PH Core FHIR Implementation Guide](https://build.fhir.org/ig/UP-Manila-SILab/ph-core/index.html).
 

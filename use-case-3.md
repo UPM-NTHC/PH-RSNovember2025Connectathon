@@ -1,6 +1,6 @@
 # Use Case #3
 
-Use Case #3
+The hospital facility now has access to the history of the patient and the initial assessment of the EMS during the incident. Using the data from the shared health records, the health care team has delivered timely and proper care to the patient that was brought to the hospital. In order to document the treatment that was given in the hospital, the facility must now submit the records to the SHR. Use Case #3 shall be the act of submitting the road safety case bundle from the hospital facility to the SHR endpoint.
 
 The PH Road Safety FHIR® Connectathon 2025 will use the **draft** [PH RS FHIR Implementation Guide](https://build.fhir.org/ig/UPM-NTHC/PH-RoadSafetyIG/) with references pointing to the **draft** [PH Core FHIR Implementation Guide](https://build.fhir.org/ig/UP-Manila-SILab/ph-core/index.html).
 
