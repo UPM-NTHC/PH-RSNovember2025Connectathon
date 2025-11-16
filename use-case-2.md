@@ -1,6 +1,6 @@
 # Use Case #2
 
-Use Case #2 
+The patient, now in the care of EMS, is on the way to a hospital facility. This said, hospital facility needs to understand the full context of the incident and the patient’s initial condition. To ensure continuity of care, the hospital retrieves the patient’s shared record from the Shared Health Record (SHR). Use Case #2 covers the retrieval of the road safety case data bundle from the SHR by the hospital facility.
 
 The PH Road Safety FHIR® Connectathon 2025 will use the **draft** [PH RS FHIR Implementation Guide](https://build.fhir.org/ig/UPM-NTHC/PH-RoadSafetyIG/) with references pointing to the **draft** [PH Core FHIR Implementation Guide](https://build.fhir.org/ig/UP-Manila-SILab/ph-core/index.html).
 
@@ -40,7 +40,21 @@ The tools below allow you to perform experimentation immediately and interact wi
 - GET $everything using `Patient` ID: Transaction response shows all FHIR resources submitted related to patient such as `Observation`, `Patient`, `Encounter`... 
 
 ### Sequence Diagram
-![alt text](<FHIR PH Immunization Sequence Diagram - UC1,5.png>)
+```mermaid
+sequenceDiagram
+    Hospital Facility->>FHIR Server : GET /Patient/ID
+    activate FHIR Server
+    FHIR Server-->> Hospital Facility: 200 OK + Patient resource
+    deactivate FHIR Server
+    Hospital Facility->>FHIR Server: GET /Encounter/ID
+    activate FHIR Server
+    FHIR Server -->> Hospital Facility : 200 OK + Encounter resource
+    deactivate FHIR Server
+    Hospital Facility->>FHIR Server: GET /Patient/ID/$everything
+    activate FHIR Server
+    FHIR Server -->> Hospital Facility : 200 OK + Patient, Encounter, Observation...
+    deactivate FHIR Server
+```
 
 For a more detailed overview of the acceptance criteria of Use Case #2, please refer to the PH RS Acceptance Criteria Google Sheet.
 

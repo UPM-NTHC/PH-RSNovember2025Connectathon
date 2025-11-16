@@ -1,6 +1,7 @@
 # Use Case #5
 
-Use Case #5
+After the acute phase of the incident has passed, the health center or local primary care provider may need to conduct patient follow-ups—such as wound checks, rehabilitation tracking, or monitoring long-term outcomes. To ensure that this follow-up care is accurate, the health center first retrieves the patient’s road safety case from the Shared Health Record (SHR). Based on the retrieved information, the health center performs the necessary follow-up assessment and must then submit updated information back to the SHR.
+Use Case #5 includes both the retrieval (GET) and follow-up submission (POST) of road safety case data to the SHR by the health center.
 
 The PH Road Safety FHIR® Connectathon 2025 will use the **draft** [PH RS FHIR Implementation Guide](https://build.fhir.org/ig/UPM-NTHC/PH-RoadSafetyIG/) with references pointing to the **draft** [PH Core FHIR Implementation Guide](https://build.fhir.org/ig/UP-Manila-SILab/ph-core/index.html).
 
@@ -23,26 +24,51 @@ The tools below allow you to perform experimentation immediately and interact wi
 - [Postman Collection](../postman-collection/) 
 - [FHIR validator](https://validator.fhirlab.net)
 
-## Activity 1: Utilize the Terminology Server and Retrieve Value Set Codes
-
+## Activity 5: Retrieve patient records for follow-up and submit to the Shared Health Records (Use Case #5)
 | Step | Activity                                       | Notes                                                                 | 
 |------|------------------------------------------------|-----------------------------------------------------------------------|
-| 1    | Review Immunization FHIR IG Value Sets         | Official URL of Value Sets can be found on the [Immunization FHIR IG Artifacts](https://build.fhir.org/ig/UP-Manila-SILab/immunizationfhirig/artifacts.html).                       |
-| 2    | Setup access to test FHIR server               | Refer to the environment under the [Postman Collection](../postman-collection) folder. |
-| 3    | Get `Administrative Gender` Value Set           | This is a required Value Set in FHIR which can be found on the [PH Core Patient](https://build.fhir.org/ig/UP-Manila-SILab/ph-core/StructureDefinition-ph-core-patient.html) resource.|
-| 4    | Get `Vaccine Brand Name` Value Set             | $expand can be used to display Value Set codes.|
-| 5    | Get `Vaccine Generic Name` Value Set           | $expand can be used to display Value Set codes.|
-| 6    | Get `Action Taken` Value Set                    | $expand can be used to display Value Set codes.|
-| 7    | Get `Action Reason` Value Set                   | $expand can be used to display Value Set codes.|
-| 8    | Get `Vaccination Encounter Type` Value Set      | $expand can be used to display Value Set codes.|
+| 1    | Review Road Safety FHIR IG Resources           | Refer to Resource Profiles found on the [Road Safety FHIR IG Artifacts](https://github.com/UP-Manila-SILab/PH-RoadSafetyIG).|
+| 2    | Recall the Facility bundle resource `IDs`      | Patient logical ID was created after the bundle resource was successfully posted.|
+| 3    | Setup access to test FHIR server               | Refer to the environment under the [Postman Collection](../postman-collection) folder.|
+| 4    | Get EMS bundle `Patient` resource data         | In postman, use the syntax GET `{{fhir}}/Patient/ID`                          |
+| 5    | Get EMS bundle `Encounter` resource data       | In postman, use the syntax GET `{{fhir}}/Encounter/ID`                        |
+| 6    | Get $everything from the patient records       | In postman, use the syntax GET `{{fhir}}/Patient/ID/$everything`              | 
+| 7    | Create a Resource `Bundle` for the patient     | A bundle is a container for a collection of resources. Use provided examples. |
+| 8    | `$validate` the Resource Bundle                | Resources can be validated through Postman (tx endpoint) or through hosted FHIR validators. | 
+| 9    | Submit `Bundle` to the SHR                     | Use the FHIRLab `HAPI FHIR` Endpoint https://cdr.fhirlab.net/fhir |
 
 
 
 ### Use Case Success
-Server returns HTTP 200 OK with full Value Set response.
+- After GET, server returns HTTP `200 OK`. 
+- GET `Patient` and `Encounter`: Transaction response shows details about the patient and encounter.
+- GET $everything using `Patient` ID: Transaction response shows all FHIR resources submitted related to patient such as `Observation`, `Patient`, `Encounter`... 
+- After POST, server returns HTTP `200 OK`. 
+- Transaction response also shows that resources were `201 Created` (with generated resource IDs). 
 
 ### Sequence Diagram
-![alt text](<FHIR PH Immunization Sequence Diagram - UC1,5.png>)
+```mermaid
+sequenceDiagram
+    Health Center->>FHIR Server: GET /Patient/ID
+    activate FHIR Server
+    FHIR Server-->>Health Center: 200 OK + Patient resource
+    deactivate FHIR Server
+
+    Health Center->>FHIR Server: GET /Encounter/ID
+    activate FHIR Server
+    FHIR Server-->>Health Center: 200 OK + Encounter resource
+    deactivate FHIR Server
+
+    Health Center->>FHIR Server: GET /Patient/ID/$everything
+    activate FHIR Server
+    FHIR Server-->>Health Center: 200 OK + Patient, Encounter, Observation...
+    deactivate FHIR Server
+
+    Health Center->>FHIR Server: POST Patient Data Bundle<br/>(Use ONLY mock data)
+    activate FHIR Server
+    FHIR Server-->>Health Center: 200 OK / 201 Created<br/>(Resource IDs generated)
+    deactivate FHIR Server
+```
 
 ### Acceptance Criteria
 For a more detailed overview of the acceptance criteria of Use Case #5, please refer to the PH RS Acceptance Criteria Google Sheet.
