@@ -50,16 +50,17 @@ The general objective of this activity is to strengthen capacity for digital hea
 | 👉 [Click for track details of Use Case #3](use-case-3.md) | |
 | UC4: Users will retrieve relevant data from SHR for agency reports. **(GET)** | Post-incident investigation | Government agency
 | 👉 [Click for track details of Use Case #4](use-case-4.md) | |
-| UC5: Users will retrieve data from SHR for continuity of care. **(GET)** | Post-incident investigation | Health center
+| UC5: Users will retrieve data for follow up and submit to SHR. **(GET & POST)** | Post-incident investigation | Health center
 | 👉 [Click for track details of Use Case #5](use-case-5.md) | |
 
 ## Postman Collection and Environment
 
-To help participants get started, we have prepared Postman collections, environment, and example data for each use case. These include:
+To help participants get started, we have prepared a Postman collection, environment, and example data for each use case. These include:
 
 - Expanding valuesets
 - Validating resources
 - Submitting transaction bundles
+- Retrieving resources
 
 👉 [Click for the link to the Postman Collection and Environment](postman-collection)
 

@@ -1,6 +1,6 @@
-# Use Case #5 and #6
+# Use Case #4
 
-Use Case #5 and #6 will focus on 
+Government agencies retrieve road safety case data from the SHR to support post-incident investigation, reporting, and policy analysis. Use Case #4 covers the GET request for relevant case data from the SHR.
 
 The PH Road Safety FHIR® Connectathon 2025 will use the **draft** [PH RS FHIR Implementation Guide](https://build.fhir.org/ig/UPM-NTHC/PH-RoadSafetyIG/) with references pointing to the **draft** [PH Core FHIR Implementation Guide](https://build.fhir.org/ig/UP-Manila-SILab/ph-core/index.html).
 
@@ -42,7 +42,21 @@ The tools below allow you to perform experimentation immediately and interact wi
 Server returns HTTP 200 OK with full Value Set response.
 
 ### Sequence Diagram
-![alt text](<FHIR PH Immunization Sequence Diagram - UC1,5.png>)
+```mermaid
+sequenceDiagram
+    Government Agency->>FHIR Server : GET /Patient/ID
+    activate FHIR Server
+    FHIR Server-->> Government Agency: 200 OK + Patient resource
+    deactivate FHIR Server
+    Government Agency->>FHIR Server: GET /Encounter/ID
+    activate FHIR Server
+    FHIR Server -->> Government Agency : 200 OK + Encounter resource
+    deactivate FHIR Server
+    Government Agency->>FHIR Server: GET /Patient/ID/$everything
+    activate FHIR Server
+    FHIR Server -->> Government Agency : 200 OK + Patient, Encounter, Observation...
+    deactivate FHIR Server
+```
 
 ### Acceptance Criteria
 For a more detailed overview of the acceptance criteria of Use Case #4, please refer to the PH RS Acceptance Criteria Google Sheet.
