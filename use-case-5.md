@@ -32,7 +32,8 @@ The tools below allow you to perform experimentation immediately and interact wi
 | 3    | Setup access to test FHIR server               | Refer to the environment under the [Postman Collection](../postman-collection) folder.|
 | 4    | Get EMS bundle `Patient` resource data         | In postman, use the syntax GET `{{fhir}}/Patient/ID`                          |
 | 5    | Get EMS bundle `Encounter` resource data       | In postman, use the syntax GET `{{fhir}}/Encounter/ID`                        |
-| 6    | Get $everything from the patient records       | In postman, use the syntax GET `{{fhir}}/Patient/ID/$everything`              | 
+| 6    | Get $everything about the patient              | In postman, use the syntax GET `{{fhir}}/Patient/ID/$everything`              | 
+| 7    | Get $everything from an encounter              | In postman, use the syntax GET `{{fhir}}/Encounter/ID/$everything`            | 
 | 7    | Create a Resource `Bundle` for the patient     | A bundle is a container for a collection of resources. Use provided examples. |
 | 8    | `$validate` the Resource Bundle                | Resources can be validated through Postman (tx endpoint) or through hosted FHIR validators. | 
 | 9    | Submit `Bundle` to the SHR                     | Use the FHIRLab `HAPI FHIR` Endpoint https://cdr.fhirlab.net/fhir |
@@ -62,6 +63,11 @@ sequenceDiagram
     Health Center->>FHIR Server: GET /Patient/ID/$everything
     activate FHIR Server
     FHIR Server-->>Health Center: 200 OK + Patient, Encounter, Observation...
+    deactivate FHIR Server
+
+    Health Center->>FHIR Server: GET /Enctouner/ID/$everything
+    activate FHIR Server
+    FHIR Server-->>Health Center: 200 OK + Encounter, Patient, Observation...
     deactivate FHIR Server
 
     Health Center->>FHIR Server: POST Patient Data Bundle<br/>(Use ONLY mock data)
