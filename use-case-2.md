@@ -31,13 +31,15 @@ The tools below allow you to perform experimentation immediately and interact wi
 | 3    | Setup access to test FHIR server               | Refer to the environment under the [Postman Collection](../postman-collection) folder.|
 | 4    | Get EMS bundle `Patient` resource data         | In postman, use the syntax GET `{{fhir}}/Patient/ID`                          |
 | 5    | Get EMS bundle `Encounter` resource data       | In postman, use the syntax GET `{{fhir}}/Encounter/ID`                        |
-| 6    | Get $everything from the patient records       | In postman, use the syntax GET `{{fhir}}/Patient/ID/$everything`              | 
+| 6    | Get $everything about the patient              | In postman, use the syntax GET `{{fhir}}/Patient/ID/$everything`              | 
+| 7    | Get $everything from an encounter              | In postman, use the syntax GET `{{fhir}}/Encounter/ID/$everything`            |     
 
 
 ### Use Case Success
 - Server returns HTTP `200 OK`. 
 - GET `Patient` and `Encounter`: Transaction response shows details about the patient and encounter.
 - GET $everything using `Patient` ID: Transaction response shows all FHIR resources submitted related to patient such as `Observation`, `Patient`, `Encounter`... 
+- GET $everything from an `Encounter`: Transanction response shows all FHIR resources related to the encounter.
 
 ### Sequence Diagram
 ```mermaid
@@ -46,13 +48,20 @@ sequenceDiagram
     activate FHIR Server
     FHIR Server-->> Hospital Facility: 200 OK + Patient resource
     deactivate FHIR Server
+
     Hospital Facility->>FHIR Server: GET /Encounter/ID
     activate FHIR Server
     FHIR Server -->> Hospital Facility : 200 OK + Encounter resource
     deactivate FHIR Server
+
     Hospital Facility->>FHIR Server: GET /Patient/ID/$everything
     activate FHIR Server
     FHIR Server -->> Hospital Facility : 200 OK + Patient, Encounter, Observation...
+    deactivate FHIR Server
+    
+    Hospital Facility->>FHIR Server: GET /Encounter/ID/$everything
+    activate FHIR Server
+    FHIR Server -->> Hospital Facility : 200 OK + Encounter, Patient, Observation...
     deactivate FHIR Server
 ```
 

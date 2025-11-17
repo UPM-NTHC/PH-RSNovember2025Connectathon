@@ -23,23 +23,22 @@ The tools below allow you to perform experimentation immediately and interact wi
 - [Postman Collection](../postman-collection/) 
 - [FHIR validator](https://validator.fhirlab.net)
 
-## Activity 1: Utilize the Terminology Server and Retrieve Value Set Codes
-
+## Activity 4: Retrieve relevant information from the Shared Health Records for agency reporting systems (Use Case #4)
 | Step | Activity                                       | Notes                                                                 | 
 |------|------------------------------------------------|-----------------------------------------------------------------------|
-| 1    | Review Immunization FHIR IG Value Sets         | Official URL of Value Sets can be found on the [Immunization FHIR IG Artifacts](https://build.fhir.org/ig/UP-Manila-SILab/immunizationfhirig/artifacts.html).                       |
-| 2    | Setup access to test FHIR server               | Refer to the environment under the [Postman Collection](../postman-collection) folder. |
-| 3    | Get `Administrative Gender` Value Set           | This is a required Value Set in FHIR which can be found on the [PH Core Patient](https://build.fhir.org/ig/UP-Manila-SILab/ph-core/StructureDefinition-ph-core-patient.html) resource.|
-| 4    | Get `Vaccine Brand Name` Value Set             | $expand can be used to display Value Set codes.|
-| 5    | Get `Vaccine Generic Name` Value Set           | $expand can be used to display Value Set codes.|
-| 6    | Get `Action Taken` Value Set                    | $expand can be used to display Value Set codes.|
-| 7    | Get `Action Reason` Value Set                   | $expand can be used to display Value Set codes.|
-| 8    | Get `Vaccination Encounter Type` Value Set      | $expand can be used to display Value Set codes.|
-
-
+| 1    | Review Road Safety FHIR IG Resources           | Refer to Resource Profiles found on the [Road Safety FHIR IG Artifacts](https://github.com/UP-Manila-SILab/PH-RoadSafetyIG).|
+| 2    | Recall the Facility bundle resource `IDs`      | Patient logical ID was created after the bundle resource was successfully posted.|
+| 3    | Setup access to test FHIR server               | Refer to the environment under the [Postman Collection](../postman-collection) folder.|
+| 4    | Get Facility bundle `Patient` resource data    | In postman, use the syntax GET `{{fhir}}/Patient/ID`                          |
+| 5    | Get Facility bundle `Encounter` resource data  | In postman, use the syntax GET `{{fhir}}/Encounter/ID`                        |
+| 6    | Get $everything about the patient              | In postman, use the syntax GET `{{fhir}}/Patient/ID/$everything`              | 
+| 7    | Get $everything from an encounter              | In postman, use the syntax GET `{{fhir}}/Encounter/ID/$everything`            |  
 
 ### Use Case Success
-Server returns HTTP 200 OK with full Value Set response.
+- Server returns HTTP `200 OK`. 
+- GET `Patient` and `Encounter`: Transaction response shows details about the patient and encounter.
+- GET $everything using `Patient` ID: Transaction response shows all FHIR resources submitted related to patient such as `Observation`, `Patient`, `Encounter`... 
+- GET $everything from an `Encounter`: Transanction response shows all FHIR resources related to the encounter.
 
 ### Sequence Diagram
 ```mermaid
@@ -48,13 +47,20 @@ sequenceDiagram
     activate FHIR Server
     FHIR Server-->> Government Agency: 200 OK + Patient resource
     deactivate FHIR Server
+
     Government Agency->>FHIR Server: GET /Encounter/ID
     activate FHIR Server
     FHIR Server -->> Government Agency : 200 OK + Encounter resource
     deactivate FHIR Server
+
     Government Agency->>FHIR Server: GET /Patient/ID/$everything
     activate FHIR Server
     FHIR Server -->> Government Agency : 200 OK + Patient, Encounter, Observation...
+    deactivate FHIR Server
+
+    Government Agency->>FHIR Server: GET /Encounter/ID/$everything
+    activate FHIR Server
+    FHIR Server -->> Government Agency : 200 OK + Encounter, Patient, Observation...
     deactivate FHIR Server
 ```
 
