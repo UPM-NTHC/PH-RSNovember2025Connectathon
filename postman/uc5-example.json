@@ -1,0 +1,213 @@
+{
+  "resourceType": "Bundle",
+  "type": "transaction",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:a9bf14d9-3293-4122-833d-ddc75539a8dc",
+      "request": {
+        "method": "POST",
+        "url": "Condition"
+      },
+      "resource": {
+        "resourceType": "Condition",
+        "id": "example",
+        "meta": {
+          "profile": [
+            "https://build.fhir.org/ig/UPM-NTHC/PH-RoadSafetyIG/StructureDefinition/rs-condition"
+          ]
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "271993009",
+              "display": "Follow-up for injury"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:26e3087f-1622-469f-ab78-695d4030fec7"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:f0e046d7-8b39-42a7-bcff-3592a2bed259",
+      "request": {
+        "method": "POST",
+        "url": "Encounter"
+      },
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "RSMinimumExampleEncounter",
+        "meta": {
+          "profile": [
+            "https://build.fhir.org/ig/UPM-NTHC/PH-RoadSafetyIG/StructureDefinition/rs-encounter"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "https://outpatient.com",
+            "value": "9001"
+          }
+        ],
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB",
+          "display": "Ambulatory"
+        },
+        "period": {
+          "start": "2025-11-15T09:00:00+08:00",
+          "end": "2025-11-15T09:30:00+08:00"
+        },
+        "subject": {
+          "reference": "urn:uuid:26e3087f-1622-469f-ab78-695d4030fec7"
+        },
+        "serviceProvider": {
+          "reference": "urn:uuid:3c6ac645-89f4-4c27-8f3e-53f7cf953d10"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:26e3087f-1622-469f-ab78-695d4030fec7",
+      "request": {
+        "method": "POST",
+        "url": "Patient"
+      },
+      "resource": {
+        "resourceType": "Patient",
+        "id": "RSMinimumExamplePatient",
+        "meta": {
+          "profile": [
+            "https://build.fhir.org/ig/UPM-NTHC/PH-RoadSafetyIG/StructureDefinition/rs-patient"
+          ]
+        },
+        "active": true,
+        "name": [
+          {
+            "use": "official",
+            "family": "Reyes",
+            "given": [
+              "Thomas Niccolo",
+              "Filamor"
+            ]
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "+63-912-345-6789"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1990-01-01",
+        "address": [
+          {
+            "use": "home",
+            "line": [
+              "123 Sampaloc Street"
+            ],
+            "city": "Manila",
+            "postalCode": "1008",
+            "country": "PH"
+          }
+        ],
+        "extension": [
+          {
+            "url": "urn://example.com/ph-core/fhir/StructureDefinition/indigenous-people",
+            "valueBoolean": false
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:ff8c8469-0fbc-4b72-98d1-0c59b3bed360",
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      },
+      "resource": {
+        "resourceType": "Observation",
+        "id": "RSMinimumExampleObsTemp",
+        "meta": {
+          "profile": [
+            "https://build.fhir.org/ig/UPM-NTHC/PH-RoadSafetyIG/StructureDefinition/rs-observation-body-temperature"
+          ]
+        },
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "version": "http://snomed.info/sct/900000000000207008/version/20241001",
+              "code": "386725007",
+              "display": "Body temperature (observable entity)"
+            }
+          ]
+        },
+        "effectiveDateTime": "2025-11-15T09:05:00+08:00",
+        "valueQuantity": {
+          "value": 37,
+          "system": "http://unitsofmeasure.org",
+          "code": "Cel"
+        },
+        "subject": {
+          "reference": "urn:uuid:26e3087f-1622-469f-ab78-695d4030fec7"
+        },
+        "encounter": {
+          "reference": "urn:uuid:f0e046d7-8b39-42a7-bcff-3592a2bed259"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:3c6ac645-89f4-4c27-8f3e-53f7cf953d10",
+      "request": {
+        "method": "POST",
+        "url": "Organization"
+      },
+      "resource": {
+        "resourceType": "Organization",
+        "id": "RSMinimumExampleOrganization",
+        "meta": {
+          "profile": [
+            "https://build.fhir.org/ig/UPM-NTHC/PH-RoadSafetyIG/StructureDefinition/rs-organization"
+          ]
+        },
+        "name": "Ermita Health Center",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "+63-2-123-4567"
+          }
+        ],
+        "address": [
+          {
+            "line": [
+              "123 M.H. Del Pilar Street"
+            ],
+            "city": "Manila",
+            "state": "NCR",
+            "postalCode": "1000",
+            "country": "PH"
+          }
+        ]
+      }
+    }
+  ]
+}
