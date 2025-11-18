@@ -62,7 +62,7 @@ To help participants get started, we have prepared a Postman collection, environ
 - Submitting transaction bundles
 - Retrieving resources
 
-👉 [Click for the link to the Postman Collection and Environment](postman-collection)
+👉 [Click for the link to the Postman Collection and Environment](./postman/) 
 
 ## FHIR Server available for testing during the Connectathon
 
