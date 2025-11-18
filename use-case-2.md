@@ -20,7 +20,7 @@ Note: FHIRLab is an open interoperability sandbox. FHIR server in FHIRLab will r
 
 The tools below allow you to perform experimentation immediately and interact with others. They are the preferred method of exploring FHIR at the connectathon.
 
-- [Postman Collection](../postman-collection/) 
+- [Postman Collection](./postman/)
 - [FHIR validator](https://validator.fhirlab.net)
 
 ## Activity 2: Retrieve EMS FHIR Resources from the Shared Health Record (Use Case #2)
@@ -28,7 +28,7 @@ The tools below allow you to perform experimentation immediately and interact wi
 |------|------------------------------------------------|-----------------------------------------------------------------------|
 | 1    | Review Road Safety FHIR IG Resources           | Refer to Resource Profiles found on the [Road Safety FHIR IG Artifacts](https://github.com/UP-Manila-SILab/PH-RoadSafetyIG).|
 | 2    | Recall the EMS bundle resource `IDs`           | Patient logical ID was created after the bundle resource was successfully posted.|
-| 3    | Setup access to test FHIR server               | Refer to the environment under the [Postman Collection](../postman-collection) folder.|
+| 3    | Setup access to test FHIR server               | Refer to the environment under the [Postman Collection](./postman/) folder.|
 | 4    | Get EMS bundle `Patient` resource data         | In postman, use the syntax GET `{{fhir}}/Patient/ID`                          |
 | 5    | Get EMS bundle `Encounter` resource data       | In postman, use the syntax GET `{{fhir}}/Encounter/ID`                        |
 | 6    | Get $everything about the patient              | In postman, use the syntax GET `{{fhir}}/Patient/ID/$everything`              | 

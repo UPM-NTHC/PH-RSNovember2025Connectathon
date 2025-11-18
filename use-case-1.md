@@ -20,15 +20,15 @@ Note: FHIRLab is an open interoperability sandbox. FHIR server in FHIRLab will r
 
 The tools below allow you to perform experimentation immediately and interact with others. They are the preferred method of exploring FHIR at the connectathon.
 
-- [PH Road Safety Postman Collection](../ph-road-safety-postman-collection/) 
+- [PH Road Safety Postman Collection](./postman/) 
 - [FHIR validator](https://validator.fhirlab.net)
 
 ## Activity 1: Validate and submit an EMS FHIR Bundle to the Shared Health Record (Use Case #1).
 | Step | Activity                                       | Notes                                                                 | 
 |------|------------------------------------------------|-----------------------------------------------------------------------|
 | 1    | Review Road Safety FHIR IG Resources           | Refer to Resource Profiles found on the [Road Safety FHIR IG Artifacts](https://github.com/UP-Manila-SILab/PH-RoadSafetyIG).|
-| 2    | Open Postman and import the postman collection provided. | Refer to the collection under the [Postman Collection](./postman-collection) folder.
-| 3    | Setup access to test FHIR server               | Refer to the provided environment under the [Postman Collection](./postman-collection) folder. |
+| 2    | Open Postman and import the postman collection provided. | Refer to the collection under the [Postman Collection](./postman/)  folder.
+| 3    | Setup access to test FHIR server               | Refer to the provided environment under the [Postman Collection](./postman/) folder. |
 | 4    | Create a Resource `Bundle` for an individual patient| A bundle is a container for a collection of resources. Use provided examples. |
 | 5    | `$validate` the Resource Bundle                | Resources can be validated through Postman (tx endpoint) or through hosted FHIR validators. | 
 | 6    | Submit `Bundle` to the SHR                    | Use the FHIRLab `HAPI FHIR` Endpoint https://cdr.fhirlab.net/fhir |

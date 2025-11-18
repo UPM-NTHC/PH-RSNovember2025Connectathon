@@ -1,0 +1,678 @@
+{
+    "resourceType": "Bundle",
+    "type": "transaction",
+    "entry": [
+        {
+            "fullUrl": "urn:uuid:150bb622-81a9-40f2-85dc-aeb432cd40d4",
+            "request": {
+                "method": "POST",
+                "url": "Observation"
+            },
+            "resource": {
+                "resourceType": "Observation",
+                "id": "RSMinimumExampleObsTimelineDateReceived",
+                "meta": {
+                    "profile": [
+                        "https://build.fhir.org/ig/UPM-NTHC/PH-RoadSafetyIG/StructureDefinition/rs-observation-timeline-date-received"
+                    ]
+                },
+                "status": "final",
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "30976-5",
+                            "display": "Date received Form"
+                        }
+                    ]
+                },
+                "encounter": {
+                    "reference": "urn:uuid:cec604e3-aaae-4541-aebd-2ba1d30645d3"
+                },
+                "effectiveDateTime": "2025-11-08T14:10:00+08:00",
+                "valueDateTime": "2025-11-08T14:10:00+08:00",
+                "subject": {
+                    "reference": "urn:uuid:1a949caf-aeeb-412a-b696-1fe38f4bd618"
+                }
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:cec604e3-aaae-4541-aebd-2ba1d30645d3",
+            "request": {
+                "method": "POST",
+                "url": "Encounter"
+            },
+            "resource": {
+                "resourceType": "Encounter",
+                "id": "RSMinimumExampleEncounter",
+                "meta": {
+                    "profile": [
+                        "https://build.fhir.org/ig/UPM-NTHC/PH-RoadSafetyIG/StructureDefinition/rs-encounter"
+                    ]
+                },
+                "identifier": [
+                    {
+                        "system": "http://ems.com/",
+                        "value": "EMS-2025-0102"
+                    }
+                ],
+                "status": "finished",
+                "class": {
+                    "system": "http://loinc.org",
+                    "code": "LA10268-3",
+                    "display": "ER"
+                },
+                "period": {
+                    "start": "2025-11-08T14:30:00+08:00",
+                    "end": "2025-11-08T16:45:00+08:00"
+                },
+                "serviceProvider": {
+                    "reference": "urn:uuid:e343adab-1e6b-41ae-9242-1b7874c299f6"
+                },
+                "subject": {
+                    "reference": "urn:uuid:1a949caf-aeeb-412a-b696-1fe38f4bd618"
+                }
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:1a949caf-aeeb-412a-b696-1fe38f4bd618",
+            "request": {
+                "method": "POST",
+                "url": "Patient"
+            },
+            "resource": {
+                "resourceType": "Patient",
+                "id": "RSMinimumExamplePatient",
+                "meta": {
+                    "profile": [
+                        "https://build.fhir.org/ig/UPM-NTHC/PH-RoadSafetyIG/StructureDefinition/rs-patient"
+                    ]
+                },
+                "extension": [
+                    {
+                        "url": "urn://example.com/ph-core/fhir/StructureDefinition/indigenous-people",
+                        "valueBoolean": false
+                    }
+                ],
+                "identifier": [
+                    {
+                        "system": "http://psa.gov.ph/",
+                        "value": "63-584789845-5"
+                    }
+                ],
+                "active": true,
+                "name": [
+                    {
+                        "use": "official",
+                        "family": "Reyes",
+                        "given": [
+                            "Thomas Niccolo",
+                            "Filamor"
+                        ]
+                    }
+                ],
+                "telecom": [
+                    {
+                        "system": "phone",
+                        "value": "+63-912-345-6789"
+                    }
+                ],
+                "gender": "male",
+                "birthDate": "1990-01-01",
+                "address": [
+                    {
+                        "use": "home",
+                        "line": [
+                            "123 Sampaloc Street"
+                        ],
+                        "city": "Manila",
+                        "postalCode": "1008",
+                        "country": "PH"
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:e343adab-1e6b-41ae-9242-1b7874c299f6",
+            "request": {
+                "method": "POST",
+                "url": "Organization"
+            },
+            "resource": {
+                "resourceType": "Organization",
+                "id": "RSMinimumExampleOrganization",
+                "meta": {
+                    "profile": [
+                        "https://build.fhir.org/ig/UPM-NTHC/PH-RoadSafetyIG/StructureDefinition/rs-organization"
+                    ]
+                },
+                "name": "Emergency Medical Service Ermita",
+                "telecom": [
+                    {
+                        "system": "phone",
+                        "value": "+63-2-911-1234"
+                    }
+                ],
+                "address": [
+                    {
+                        "line": [
+                            "Joaquin Gonzalez Compound"
+                        ],
+                        "city": "Manila",
+                        "state": "NCR",
+                        "postalCode": "1000",
+                        "country": "PH"
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:5e9ab242-c4f9-4933-b72d-3bfbe56cf58a",
+            "request": {
+                "method": "POST",
+                "url": "Observation"
+            },
+            "resource": {
+                "resourceType": "Observation",
+                "id": "RSMinimumExampleObsResp",
+                "meta": {
+                    "profile": [
+                        "https://build.fhir.org/ig/UPM-NTHC/PH-RoadSafetyIG/StructureDefinition/rs-observation-respiratory-rate"
+                    ]
+                },
+                "status": "final",
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "version": "http://snomed.info/sct/900000000000207008/version/20241001",
+                            "code": "86290005",
+                            "display": "Respiratory rate (observable entity)"
+                        }
+                    ]
+                },
+                "encounter": {
+                    "reference": "urn:uuid:cec604e3-aaae-4541-aebd-2ba1d30645d3"
+                },
+                "effectiveDateTime": "2025-11-08T14:35:00+08:00",
+                "valueQuantity": {
+                    "value": 18,
+                    "system": "http://unitsofmeasure.org",
+                    "code": "/min"
+                },
+                "subject": {
+                    "reference": "urn:uuid:1a949caf-aeeb-412a-b696-1fe38f4bd618"
+                }
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:87bf2da5-3932-419c-a7df-b728be695dfd",
+            "request": {
+                "method": "POST",
+                "url": "Observation"
+            },
+            "resource": {
+                "resourceType": "Observation",
+                "id": "RSMinimumExampleObsPulse",
+                "meta": {
+                    "profile": [
+                        "https://build.fhir.org/ig/UPM-NTHC/PH-RoadSafetyIG/StructureDefinition/rs-observation-pulse-rate"
+                    ]
+                },
+                "status": "final",
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "version": "http://snomed.info/sct/900000000000207008/version/20241001",
+                            "code": "78564009",
+                            "display": "Heart rate measured at systemic artery (observable entity)"
+                        }
+                    ]
+                },
+                "encounter": {
+                    "reference": "urn:uuid:cec604e3-aaae-4541-aebd-2ba1d30645d3"
+                },
+                "effectiveDateTime": "2025-11-08T14:35:00+08:00",
+                "valueQuantity": {
+                    "value": 88,
+                    "system": "http://unitsofmeasure.org",
+                    "code": "/min"
+                },
+                "subject": {
+                    "reference": "urn:uuid:1a949caf-aeeb-412a-b696-1fe38f4bd618"
+                }
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:744ffa0d-f3a6-44eb-b679-ee7a3ec7de35",
+            "request": {
+                "method": "POST",
+                "url": "Observation"
+            },
+            "resource": {
+                "resourceType": "Observation",
+                "id": "RSMinimumExampleObsBp",
+                "meta": {
+                    "profile": [
+                        "https://build.fhir.org/ig/UPM-NTHC/PH-RoadSafetyIG/StructureDefinition/rs-observation-blood-pressure"
+                    ]
+                },
+                "status": "final",
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "85354-9",
+                            "display": "Blood pressure panel with all children optional"
+                        }
+                    ]
+                },
+                "encounter": {
+                    "reference": "urn:uuid:cec604e3-aaae-4541-aebd-2ba1d30645d3"
+                },
+                "effectiveDateTime": "2025-11-08T14:35:00+08:00",
+                "component": [
+                    {
+                        "code": {
+                            "coding": [
+                                {
+                                    "system": "http://snomed.info/sct",
+                                    "version": "http://snomed.info/sct/900000000000207008/version/20241001",
+                                    "code": "271649006",
+                                    "display": "Systolic blood pressure (observable entity)"
+                                }
+                            ]
+                        },
+                        "valueQuantity": {
+                            "value": 120,
+                            "system": "http://unitsofmeasure.org",
+                            "code": "mm[Hg]"
+                        }
+                    },
+                    {
+                        "code": {
+                            "coding": [
+                                {
+                                    "system": "http://snomed.info/sct",
+                                    "version": "http://snomed.info/sct/900000000000207008/version/20241001",
+                                    "code": "271650006",
+                                    "display": "Diastolic blood pressure (observable entity)"
+                                }
+                            ]
+                        },
+                        "valueQuantity": {
+                            "value": 80,
+                            "system": "http://unitsofmeasure.org",
+                            "code": "mm[Hg]"
+                        }
+                    }
+                ],
+                "subject": {
+                    "reference": "urn:uuid:1a949caf-aeeb-412a-b696-1fe38f4bd618"
+                }
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:fdd9395c-9d43-45d2-963f-67c3c71a0541",
+            "request": {
+                "method": "POST",
+                "url": "Observation"
+            },
+            "resource": {
+                "resourceType": "Observation",
+                "id": "rs-example-observation-level-consciousness",
+                "meta": {
+                    "profile": [
+                        "https://build.fhir.org/ig/UPM-NTHC/PH-RoadSafetyIG/StructureDefinition/rs-observation-level-of-consciousness"
+                    ]
+                },
+                "status": "final",
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "version": "http://snomed.info/sct/900000000000207008/version/20241001",
+                            "code": "6942003",
+                            "display": "Level of consciousness (observable entity)"
+                        }
+                    ]
+                },
+                "encounter": {
+                    "reference": "urn:uuid:cec604e3-aaae-4541-aebd-2ba1d30645d3"
+                },
+                "effectiveDateTime": "2025-10-31T16:48:00+08:00",
+                "valueCodeableConcept": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "version": "http://snomed.info/sct/900000000000207008/version/20241001",
+                            "code": "248234008",
+                            "display": "Alert"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "urn:uuid:1a949caf-aeeb-412a-b696-1fe38f4bd618"
+                }
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:76d35092-1e69-4ba9-8f62-f0b8c59c9687",
+            "request": {
+                "method": "POST",
+                "url": "Observation"
+            },
+            "resource": {
+                "resourceType": "Observation",
+                "id": "RSMinimumExampleObsTemp",
+                "meta": {
+                    "profile": [
+                        "https://build.fhir.org/ig/UPM-NTHC/PH-RoadSafetyIG/StructureDefinition/rs-observation-body-temperature"
+                    ]
+                },
+                "status": "final",
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "version": "http://snomed.info/sct/900000000000207008/version/20241001",
+                            "code": "386725007",
+                            "display": "Body temperature (observable entity)"
+                        }
+                    ]
+                },
+                "encounter": {
+                    "reference": "urn:uuid:cec604e3-aaae-4541-aebd-2ba1d30645d3"
+                },
+                "effectiveDateTime": "2025-11-08T14:35:00+08:00",
+                "valueQuantity": {
+                    "value": 37,
+                    "system": "http://unitsofmeasure.org",
+                    "code": "Cel"
+                },
+                "subject": {
+                    "reference": "urn:uuid:1a949caf-aeeb-412a-b696-1fe38f4bd618"
+                }
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:8d369115-ab3f-45da-9a76-450b97cc3555",
+            "request": {
+                "method": "POST",
+                "url": "Observation"
+            },
+            "resource": {
+                "resourceType": "Observation",
+                "id": "rs-example-observation-pupils",
+                "meta": {
+                    "profile": [
+                        "https://build.fhir.org/ig/UPM-NTHC/PH-RoadSafetyIG/StructureDefinition/rs-observation-pupils"
+                    ]
+                },
+                "status": "final",
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "version": "http://snomed.info/sct/900000000000207008/version/20241001",
+                            "code": "271733001",
+                            "display": "Pupil reaction (observable entity)"
+                        }
+                    ]
+                },
+                "encounter": {
+                    "reference": "urn:uuid:cec604e3-aaae-4541-aebd-2ba1d30645d3"
+                },
+                "effectiveDateTime": "2025-10-31T16:50:00+08:00",
+                "valueCodeableConcept": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "version": "http://snomed.info/sct/900000000000207008/version/20241001",
+                            "code": "386666001",
+                            "display": "Pupils Equal and Reactive to Light (PEARL)"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "urn:uuid:1a949caf-aeeb-412a-b696-1fe38f4bd618"
+                }
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:4935a7f5-b35d-4f1a-b961-c750e32e945a",
+            "request": {
+                "method": "POST",
+                "url": "Observation"
+            },
+            "resource": {
+                "resourceType": "Observation",
+                "id": "rs-example-observation-cyanosis",
+                "meta": {
+                    "profile": [
+                        "https://build.fhir.org/ig/UPM-NTHC/PH-RoadSafetyIG/StructureDefinition/rs-observation-cyanosis"
+                    ]
+                },
+                "status": "final",
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "version": "http://snomed.info/sct/900000000000207008/version/20241001",
+                            "code": "3415004",
+                            "display": "Cyanosis (finding)"
+                        }
+                    ]
+                },
+                "encounter": {
+                    "reference": "urn:uuid:cec604e3-aaae-4541-aebd-2ba1d30645d3"
+                },
+                "effectiveDateTime": "2025-10-31T16:52:00+08:00",
+                "valueCodeableConcept": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "version": "http://snomed.info/sct/900000000000207008/version/20241001",
+                            "code": "54622005",
+                            "display": "Negative"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "urn:uuid:1a949caf-aeeb-412a-b696-1fe38f4bd618"
+                }
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:e268ff6b-462e-4330-8da7-f14c654858b6",
+            "request": {
+                "method": "POST",
+                "url": "Observation"
+            },
+            "resource": {
+                "resourceType": "Observation",
+                "id": "RSMinimumExampleObsGcs",
+                "meta": {
+                    "profile": [
+                        "https://build.fhir.org/ig/UPM-NTHC/PH-RoadSafetyIG/StructureDefinition/rs-observation-gcs"
+                    ]
+                },
+                "status": "final",
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "version": "http://snomed.info/sct/900000000000207008/version/20241001",
+                            "code": "248241002",
+                            "display": "Glasgow coma score (observable entity)"
+                        }
+                    ]
+                },
+                "encounter": {
+                    "reference": "urn:uuid:cec604e3-aaae-4541-aebd-2ba1d30645d3"
+                },
+                "effectiveDateTime": "2025-11-08T14:35:00+08:00",
+                "valueInteger": 15,
+                "component": [
+                    {
+                        "code": {
+                            "coding": [
+                                {
+                                    "system": "http://snomed.info/sct",
+                                    "version": "http://snomed.info/sct/900000000000207008/version/20241001",
+                                    "code": "281395000",
+                                    "display": "Glasgow Coma Score eye opening subscore (observable entity)"
+                                }
+                            ]
+                        },
+                        "valueCodeableConcept": {
+                            "coding": [
+                                {
+                                    "system": "http://loinc.org",
+                                    "code": "LA6562-8",
+                                    "display": "4"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "code": {
+                            "coding": [
+                                {
+                                    "system": "http://snomed.info/sct",
+                                    "version": "http://snomed.info/sct/900000000000207008/version/20241001",
+                                    "code": "281397008",
+                                    "display": "Glasgow Coma Scale verbal response subscore (observable entity)"
+                                }
+                            ]
+                        },
+                        "valueCodeableConcept": {
+                            "coding": [
+                                {
+                                    "system": "http://loinc.org",
+                                    "code": "LA6560-2",
+                                    "display": "5"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "code": {
+                            "coding": [
+                                {
+                                    "system": "http://snomed.info/sct",
+                                    "version": "http://snomed.info/sct/900000000000207008/version/20241001",
+                                    "code": "281396004",
+                                    "display": "Glasgow Coma Scale motor response subscore (observable entity)"
+                                }
+                            ]
+                        },
+                        "valueCodeableConcept": {
+                            "coding": [
+                                {
+                                    "system": "http://loinc.org",
+                                    "code": "LA6558-6",
+                                    "display": "6"
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "subject": {
+                    "reference": "urn:uuid:1a949caf-aeeb-412a-b696-1fe38f4bd618"
+                }
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:9776a4d8-b1c1-4f0e-ae65-99e642f3f2a6",
+            "request": {
+                "method": "POST",
+                "url": "Condition"
+            },
+            "resource": {
+                "resourceType": "Condition",
+                "id": "example",
+                "meta": {
+                    "profile": [
+                        "https://build.fhir.org/ig/UPM-NTHC/PH-RoadSafetyIG/StructureDefinition/rs-condition-problem"
+                    ]
+                },
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://snomed.info/sct",
+                                "version": "http://snomed.info/sct/900000000000207008/version/20241001",
+                                "code": "55607006",
+                                "display": "Problem (finding)"
+                            }
+                        ]
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "127348004",
+                            "display": "Motor vehicle accident victim (Finding)"
+                        }
+                    ],
+                    "text": "Motor vehicle accident victim"
+                },
+                "subject": {
+                    "reference": "urn:uuid:1a949caf-aeeb-412a-b696-1fe38f4bd618"
+                }
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:10083546-e6de-43a1-af43-56eec4b66698",
+            "request": {
+                "method": "POST",
+                "url": "Procedure"
+            },
+            "resource": {
+                "resourceType": "Procedure",
+                "id": "rs-example-procedure",
+                "meta": {
+                    "profile": [
+                        "https://build.fhir.org/ig/UPM-NTHC/PH-RoadSafetyIG/StructureDefinition/rs-procedure"
+                    ]
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Post-crash psychosocial counselling provided to rs-example-patient.</div>"
+                },
+                "status": "completed",
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "1255511000",
+                            "display": "Referral for personal emergency response system"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "urn:uuid:1a949caf-aeeb-412a-b696-1fe38f4bd618"
+                },
+                "encounter": {
+                    "reference": "urn:uuid:cec604e3-aaae-4541-aebd-2ba1d30645d3"
+                },
+                "performedDateTime": "2025-11-01T09:30:00+08:00",
+                "performer": [
+                    {
+                        "actor": {
+                            "reference": "Practitioner/rs-practitioner-teamlead"
+                        }
+                    }
+                ],
+                "note": [
+                    {
+                        "text": "Discussed post-crash support resources with patient and family."
+                    }
+                ]
+            }
+        }
+    ]
+}
