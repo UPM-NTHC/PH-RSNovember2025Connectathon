@@ -37,9 +37,9 @@
       }
     },
     {
-      "fullUrl": "https://cdr.fhirlab.net/fhir/Patient/RSMinimumExamplePatient",
+      "fullUrl": "Patient/RSMinimumExamplePatient",
       "request": {
-        "method": "PUT",
+        "method": "POST",
         "url": "Patient"
       },
       "resource": {
@@ -95,9 +95,9 @@
       }
     },
     {
-      "fullUrl": "https://cdr.fhirlab.net/fhir/Encounter/RSMinimumExampleEncounter",
+      "fullUrl": "RSMinimumExampleEncounter",
       "request": {
-        "method": "PUT",
+        "method": "POST",
         "url": "Encounter"
       },
       "resource": {
@@ -133,30 +133,6 @@
         },
         "serviceProvider": {
           "reference": "urn:uuid:dd932695-27c9-4dce-8ae2-01b6bd4f7eb8"
-        }
-      }
-    },
-    {
-      "fullUrl": "urn:uuid:d83bc563-f9a0-4716-aa08-ac92c742d7c6",
-      "request": {
-        "method": "POST",
-        "url": "Location"
-      },
-      "resource": {
-        "resourceType": "Location",
-        "id": "RSMinimumExampleLocation",
-        "meta": {
-          "profile": [
-            "https://build.fhir.org/ig/UPM-NTHC/PH-RoadSafetyIG/StructureDefinition/rs-incident-location-incident"
-          ]
-        },
-        "description": "Incident at the corner of EDSA and Ayala Avenue",
-        "address": {
-          "line": [
-            "EDSA corner Ayala Avenue"
-          ],
-          "city": "Makati",
-          "country": "PH"
         }
       }
     },
